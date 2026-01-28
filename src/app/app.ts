@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Header } from './components';
+import { Header } from '@components';
 import { NavigationItem } from '@contracts';
 
 @Component({

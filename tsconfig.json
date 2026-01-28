@@ -16,7 +16,8 @@
     "module": "preserve",
     "baseUrl": "src",
     "paths": {
-      "@contracts": ["app/contracts/index.ts"]
+      "@contracts": ["app/contracts/index.ts"],
+      "@components": ["app/components/index.ts"]
     }
   },
   "angularCompilerOptions": {
