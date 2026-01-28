@@ -1,18 +1,53 @@
-<div class="bg-white dark:bg-surface-900 h-16 w-vhs flex items-center justify-center xl:px-20 px-8">
-  <div class="container">
-    <div class="flex justify-between">
-      <!-- Logo -->
-      <div class="flex gap-3">
-        <div class="rounded-lg w-10 h-10 bg-red-500 flex items-center justify-center">
-          <p class="font-bold text-xl">A</p>
+<div class="h-16 w-full">
+  <div
+    class="z-10 fixed bg-white/90 dark:bg-surface-900/90 h-16 w-full flex items-center justify-center xl:px-20 px-8"
+  >
+    <div class="container">
+      <div class="flex justify-between">
+        <!-- Logo -->
+        <div class="flex gap-3">
+          <div class="rounded-lg w-10 h-10 bg-red-500 flex items-center justify-center">
+            <p class="font-bold text-white text-xl">A</p>
+          </div>
+          <div class="xs:flex hidden flex-col">
+            <p class="dark:text-white/80 text-black/80 font-bold">Autoškola IMRICH</p>
+            <p class="text-xs dark:text-white/80 text-black/80">Spoľahlivé kurzy</p>
+          </div>
         </div>
-        <div class="xs:flex hidden flex-col">
-          <p class="dark:text-white/80 text-black/80 font-bold">Autoškola IMRICH</p>
-          <p class="text-xs dark:text-white/80 text-black/80">Spoľahlivé kurzy</p>
+        <!-- Navgation -->
+        <div class="xl:flex hidden items-center gap-8">
+          @for (item of navigationItems(); track item) {
+            <p
+              class="dark:text-white/80 text-black/80 cursor-pointer hover:text-primary duration-200 transition-colors"
+            >
+              {{ item.label }}
+            </p>
+          }
+        </div>
+        <!-- Enroll -->
+        <div class="flex gap-4 items-center">
+          <div class="xl:flex gap-4 items-center hidden">
+            <div class="flex items-center gap-2">
+              <i class="pi pi-phone dark:text-white text-black"></i>
+              <p class="dark:text-white text-black text-sm">+421 905 817 962</p>
+            </div>
+            <p-button size="small">
+              <p class="text-white text-sm font-semibold">Zapísať sa</p>
+            </p-button>
+          </div>
+          <!-- Burger -->
+          <p-button (onClick)="drawerMenu = true" class="xl:hidden flex" size="small" text>
+            <i class="pi pi-bars text-lg! dark:text-white text-black"></i>
+          </p-button>
         </div>
       </div>
-      <!-- Navgation -->
-      <div class="xl:flex hidden items-center gap-8">
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <p-drawer [(visible)]="drawerMenu" header="Menu">
+    <div class="flex h-full flex-col justify-between">
+      <!-- Navigation -->
+      <div class="flex flex-col gap-4">
         @for (item of navigationItems(); track item) {
           <p
             class="dark:text-white/80 text-black/80 cursor-pointer hover:text-primary duration-200 transition-colors"
@@ -22,49 +57,18 @@
         }
       </div>
       <!-- Enroll -->
-      <div class="flex gap-4 items-center">
-        <div class="xl:flex gap-4 items-center hidden">
+      <div class="flex flex-col">
+        <p-divider />
+        <div class="flex flex-col gap-4">
           <div class="flex items-center gap-2">
             <i class="pi pi-phone dark:text-white text-black"></i>
             <p class="dark:text-white text-black text-sm">+421 905 817 962</p>
           </div>
-          <p-button size="small">
+          <p-button fluid>
             <p class="text-white text-sm font-semibold">Zapísať sa</p>
           </p-button>
         </div>
-        <!-- Burger -->
-        <p-button (onClick)="drawerMenu = true" class="xl:hidden flex" size="small" text>
-          <i class="pi pi-bars text-lg! dark:text-white text-black"></i>
-        </p-button>
       </div>
     </div>
-  </div>
+  </p-drawer>
 </div>
-<!-- Mobile Menu -->
-<p-drawer [(visible)]="drawerMenu" header="Menu">
-  <div class="flex h-full flex-col justify-between">
-    <!-- Navigation -->
-    <div class="flex flex-col gap-4">
-      @for (item of navigationItems(); track item) {
-        <p
-          class="dark:text-white/80 text-black/80 cursor-pointer hover:text-primary duration-200 transition-colors"
-        >
-          {{ item.label }}
-        </p>
-      }
-    </div>
-    <!-- Enroll -->
-    <div class="flex flex-col">
-      <p-divider />
-      <div class="flex flex-col gap-4">
-        <div class="flex items-center gap-2">
-          <i class="pi pi-phone dark:text-white text-black"></i>
-          <p class="dark:text-white text-black text-sm">+421 905 817 962</p>
-        </div>
-        <p-button fluid>
-          <p class="text-white text-sm font-semibold">Zapísať sa</p>
-        </p-button>
-      </div>
-    </div>
-  </div>
-</p-drawer>

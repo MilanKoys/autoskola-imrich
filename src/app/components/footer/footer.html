@@ -1,0 +1,70 @@
+<div class="w-full flex flex-col items-center xl:px-20 px-8 dark:bg-surface-900 bg-zinc-800">
+  <div class="flex flex-wrap mt-10 mb-6 w-full gap-10 justify-between container">
+    <!-- Footer Items -->
+
+    <!-- About -->
+    <div class="flex flex-col gap-3 w-96">
+      <!-- About Logo -->
+      <div class="flex gap-2 items-center mb-2">
+        <div class="rounded-lg w-8 h-8 bg-red-500 flex items-center justify-center">
+          <p class="font-bold text-white">A</p>
+        </div>
+        <p class="dark:text-white/80 text-black/80 text-lg font-semibold">Autoškola IMRICH</p>
+      </div>
+      <!-- About Description -->
+      <p class="text-sm text-white/40">
+        Spoľahlivé kurzy pre vodičský preukaz s najvyššou úspešnosťou na Slovensku. Už 15 rokov
+        vzdelávame budúcich vodičov.
+      </p>
+      <!-- About Socials -->
+      <div class="flex gap-2">
+        <p-button size="small" text>
+          <i class="pi pi-instagram"></i>
+        </p-button>
+        <p-button size="small" text>
+          <i class="pi pi-tiktok"></i>
+        </p-button>
+        <p-button size="small" text>
+          <i class="pi pi-facebook"></i>
+        </p-button>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="flex flex-col w-96 gap-4">
+      <p class="font-bold text-lg">Kontakt</p>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-phone dark:text-white/50 text-black"></i>
+        <p class="dark:text-white/50 text-black text-sm">+421 905 817 962</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-envelope dark:text-white/50 text-black"></i>
+        <p class="dark:text-white/50 text-black text-sm">info@autoskola-imrich.sk</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-map-marker dark:text-white/50 text-black"></i>
+        <p class="dark:text-white/50 text-black text-sm">
+          Werferova 1 <br />
+          040 11 Košice
+        </p>
+      </div>
+    </div>
+
+    <!-- Links -->
+    <div class="flex flex-col w-96 gap-4">
+      <p class="font-bold text-lg">Rýchle odkazy</p>
+      <div class="flex flex-col gap-2">
+        @for (item of navigationItems(); track item) {
+          <p-button [style]="{ padding: '0px' }" link
+            ><p class="text-sm">{{ item.label }}</p></p-button
+          >
+        }
+      </div>
+    </div>
+  </div>
+  <!-- Bottom Text -->
+  <div class="container flex flex-col w-full items-center justify-center mb-12 gap-4">
+    <p-divider />
+    <p class="text-sm text-white/40">© 2026 Autoškola IMRICH. Všetky práva vyhradené.</p>
+  </div>
+</div>
