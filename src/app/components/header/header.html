@@ -43,6 +43,7 @@
 <!-- Mobile Menu -->
 <p-drawer [(visible)]="drawerMenu" header="Menu">
   <div class="flex h-full flex-col justify-between">
+    <!-- Navigation -->
     <div class="flex flex-col gap-4">
       @for (item of navigationItems(); track item) {
         <p
@@ -52,6 +53,7 @@
         </p>
       }
     </div>
+    <!-- Enroll -->
     <div class="flex flex-col">
       <p-divider />
       <div class="flex flex-col gap-4">
