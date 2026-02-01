@@ -3,7 +3,7 @@ import { WhyTag } from '@contracts';
 
 const tags: WhyTag[] = [
   {
-    header: '5000+',
+    header: '4000+',
     summary: 'Úspešných absolventov',
     detail: 'Za posledných 10 rokov',
     icon: 'pi-users',
@@ -21,7 +21,7 @@ const tags: WhyTag[] = [
     icon: 'pi-car',
   },
   {
-    header: '4',
+    header: '2',
     summary: 'Profesionálni inštruktori',
     detail: 'Certifikovaní odborníci',
     icon: 'pi-trophy',

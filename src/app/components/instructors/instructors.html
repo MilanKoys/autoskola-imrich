@@ -45,26 +45,31 @@
               <p>{{ instructor.students }}</p>
             </div>
           </div>
-          <div class="flex flex-col gap-3">
-            <p>Špecializácia:</p>
-            <div class="flex gap-4">
-              @for (specialization of instructor.specialization; track specialization) {
-                <p-tag>
-                  <p class="text-xs">Skupina A, B, C, T, E, D</p>
-                </p-tag>
-              }
+          @if (instructor.specialization.length) {
+            <div class="flex flex-col gap-3">
+              <p>Špecializácia:</p>
+              <div class="flex gap-4">
+                @for (specialization of instructor.specialization; track specialization) {
+                  <p-tag>
+                    <p class="text-xs">Skupina A, B, C, T, E, D</p>
+                  </p-tag>
+                }
+              </div>
             </div>
-          </div>
-          <div class="flex flex-col gap-3">
-            <p>Ocenenia:</p>
-            <div class="flex gap-4 flex-wrap">
-              @for (award of instructor.awards; track award) {
-                <p-tag severity="secondary">
-                  <p class="text-xs">{{ award }}</p>
-                </p-tag>
-              }
+          }
+
+          @if (instructor.awards.length) {
+            <div class="flex flex-col gap-3">
+              <p>Ocenenia:</p>
+              <div class="flex gap-4 flex-wrap">
+                @for (award of instructor.awards; track award) {
+                  <p-tag severity="secondary">
+                    <p class="text-xs">{{ award }}</p>
+                  </p-tag>
+                }
+              </div>
             </div>
-          </div>
+          }
         </div>
       </div>
     }
