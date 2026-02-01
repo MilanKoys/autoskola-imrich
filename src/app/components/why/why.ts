@@ -1,7 +1,7 @@
 import { Component, Signal, signal, WritableSignal } from '@angular/core';
-import { AdvantageTag } from '@contracts';
+import { WhyTag } from '@contracts';
 
-const tags: AdvantageTag[] = [
+const tags: WhyTag[] = [
   {
     header: '5000+',
     summary: 'Úspešných absolventov',
@@ -35,7 +35,7 @@ const tags: AdvantageTag[] = [
   styleUrl: './why.css',
 })
 export class Why {
-  private readonly _tags: WritableSignal<AdvantageTag[]> = signal(tags);
+  private readonly _tags: WritableSignal<WhyTag[]> = signal(tags);
 
-  protected readonly tags: Signal<AdvantageTag[]> = this._tags.asReadonly();
+  protected readonly tags: Signal<WhyTag[]> = this._tags.asReadonly();
 }
