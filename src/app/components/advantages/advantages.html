@@ -1,0 +1,32 @@
+<div class="w-full bg-primary px-10 py-20 flex items-center justify-center flex-col gap-10">
+  <div class="flex items-center justify-center flex-col max-w-2xl">
+    <div class="flex flex-col gap-3">
+      <p class="dark:text-black/80 text-white font-bold lg:text-4xl text-3xl text-center">
+        Prečo si vybrať autoškolu IMRICH?
+      </p>
+      <p class="dark:text-black/80 text-white text-xl text-center">
+        Naše čísla hovoria za nás. Sme lídrom v oblasti vzdelávania budúcich vodičov.
+      </p>
+    </div>
+  </div>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 xl:grid-flow-col xl:auto-cols-fr gap-16 max-w-7xl justify-between w-full"
+  >
+    @for (tag of tags(); track tag) {
+      <div class="flex flex-col items-center justify-center gap-6">
+        <div class="rounded-full bg-white/40 size-16 flex items-center justify-center">
+          <i class="pi {{ tag.icon }} text-3xl! dark:text-black/80 text-white"></i>
+        </div>
+        <div class="flex flex-col">
+          <p class="dark:text-black/80 text-white text-center text-5xl font-bold">
+            {{ tag.header }}
+          </p>
+          <p class="dark:text-black/80 text-white text-lg text-center font-bold mt-3">
+            {{ tag.summary }}
+          </p>
+          <p class="dark:text-black/80 text-white text-center text-sm">{{ tag.detail }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
