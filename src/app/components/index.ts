@@ -7,3 +7,5 @@ export * from './hero/hero';
 export * from './advantages/advantages';
 
 export * from './why/why';
+
+export * from './instructors/instructors';

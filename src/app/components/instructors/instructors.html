@@ -1,0 +1,72 @@
+<div class="w-full px-10 py-20 flex items-center justify-center flex-col gap-14">
+  <div class="flex items-center justify-center flex-col max-w-2xl">
+    <div class="flex flex-col gap-3">
+      <p class="dark:text-white font-bold lg:text-4xl text-3xl text-center">
+        Zoznámte sa s našimi inštruktormi
+      </p>
+      <p class="dark:text-white text-xl text-center">
+        Naši certifikovaní inštruktori vás bezpečne prevedú celým procesom získania vodičského
+        preukazu.
+      </p>
+    </div>
+  </div>
+  <div
+    class="grid grid-cols-auto grid-rows-auto xl:grid-flow-col xl:auto-cols-fr gap-16 justify-between place-items-center"
+  >
+    @for (instructor of instructors(); track instructor) {
+      <div
+        class="mx-10 flex flex-col gap-10 w-full max-w-lg overflow-hidden rounded-xl bg-secondary bg-black/3 dark:bg-none bg shadow-lg hover:shadow-xl transition-all duration-300"
+      >
+        <div class="flex flex-col">
+          <div class="aspect-1/1 bg-red-500 w-full bg-secondary flex items-center justify-center">
+            @if (instructor.image) {
+              <div class="w-full h-full bg-[url(/{{ instructor.image }})]"></div>
+            } @else {
+              <div
+                class="instructor-placeholder-image w-full h-full flex items-center justify-center"
+              >
+                <i class="text-7xl! pi pi-user"></i>
+              </div>
+            }
+          </div>
+        </div>
+        <div class="flex flex-col mx-6 mb-6 gap-6">
+          <div class="flex flex-col gap-1">
+            <p class="text-xl font-bold">{{ instructor.name }}</p>
+            <p class="text-primary">{{ instructor.position }}</p>
+          </div>
+          <div class="flex gap-10">
+            <div class="flex items-center gap-2">
+              <i class="pi pi-stopwatch"></i>
+              <p>{{ instructor.experience }} rokov</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="pi pi-users"></i>
+              <p>{{ instructor.students }}</p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p>Špecializácia:</p>
+            <div class="flex gap-4">
+              @for (specialization of instructor.specialization; track specialization) {
+                <p-tag>
+                  <p class="text-xs">Skupina A, B, C, T, E, D</p>
+                </p-tag>
+              }
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p>Ocenenia:</p>
+            <div class="flex gap-4 flex-wrap">
+              @for (award of instructor.awards; track award) {
+                <p-tag severity="secondary">
+                  <p class="text-xs">{{ award }}</p>
+                </p-tag>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

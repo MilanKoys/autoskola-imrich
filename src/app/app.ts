@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Advantages, Footer, Header, Hero, Why } from '@components';
+import { Advantages, Footer, Header, Hero, Instructors, Why } from '@components';
 import { NavigationItem } from '@contracts';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, Hero, Advantages, Why],
+  imports: [Header, Footer, Hero, Advantages, Why, Instructors],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
