@@ -9,3 +9,5 @@ export * from './advantages/advantages';
 export * from './why/why';
 
 export * from './instructors/instructors';
+
+export * from './contact-us/contact-us';
