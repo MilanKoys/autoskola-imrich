@@ -14,7 +14,7 @@ const instructors: Instructor[] = [
   },
   {
     name: 'Ing. Ladislav IMRICH',
-    position: 'CEO spoločnosti, inštruktor',
+    position: 'CEO spoločnosti',
     experience: '30',
     students: '2000+',
     specialization: ['Skupina A, B, C, T, E, D'],
