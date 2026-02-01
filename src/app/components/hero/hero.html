@@ -1,0 +1,27 @@
+<div class="w-full aspect-16/6 hero-image flex justify-center items-center">
+  <div class="flex flex-col justify-center items-center max-w-3xl w-full m-10 gap-8">
+    <div class="flex gap-4">
+      <p-rating [readonly]="true" [formControl]="ratingControl" />
+      <p class="text-white text-sm">{{ ratingControl.value }}/5 hodnotenie od študentov</p>
+    </div>
+    <p class="font-bold lg:text-7xl text-4xl text-center text-white">
+      Kurzy s autoškolu IMRICH sú spoľahlivé
+    </p>
+    <p class="text-white lg:text-2xl text-xl text-center">
+      Získajte vodičský preukaz s najlepšími inštruktormi na Slovensku. Moderné vozidlá, flexibilné
+      hodiny a 98% úspešnosť pri skúškach.
+    </p>
+    <div class="flex gap-4 flex-wrap justify-center">
+      <p-button size="large">Začať kurz</p-button>
+      <p-button size="large" severity="secondary">Zistiť viac</p-button>
+    </div>
+    <div class="flex justify-center flex-wrap gap-12 mt-4">
+      @for (tag of tags(); track tag) {
+        <div class="flex gap-2 items-center">
+          <i class="pi pi-check-circle text-green-400"></i>
+          <p>{{ tag }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</div>
