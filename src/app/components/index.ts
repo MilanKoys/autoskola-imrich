@@ -5,3 +5,5 @@ export * from './footer/footer';
 export * from './hero/hero';
 
 export * from './advantages/advantages';
+
+export * from './why/why';
