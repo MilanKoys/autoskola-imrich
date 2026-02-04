@@ -17,7 +17,8 @@
     "baseUrl": "src",
     "paths": {
       "@contracts": ["app/contracts/index.ts"],
-      "@components": ["app/components/index.ts"]
+      "@components": ["app/components/index.ts"],
+      "@views": ["app/views/index.ts"]
     }
   },
   "angularCompilerOptions": {

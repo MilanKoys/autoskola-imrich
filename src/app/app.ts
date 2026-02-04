@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { Advantages, ContactUs, Footer, Header, Hero, Instructors, Why } from '@components';
+import { RouterOutlet } from '@angular/router';
+import { Shell } from '@components';
 import { NavigationItem } from '@contracts';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Footer, Hero, Advantages, Why, Instructors, ContactUs],
+  imports: [RouterOutlet, Shell],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -12,7 +13,7 @@ export class App {
   protected readonly navigationItems: NavigationItem[] = [
     {
       label: 'Domov',
-      route: 'home',
+      route: '',
     },
     {
       label: 'Galéria',
@@ -28,7 +29,7 @@ export class App {
     },
     {
       label: 'O Nás',
-      route: 'about',
+      route: 'about-us',
     },
     {
       label: 'Kontakt',

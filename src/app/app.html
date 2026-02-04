@@ -1,11 +1,3 @@
-<div class="flex justify-between flex-col min-h-lvh">
-  <app-header [navigationItems]="navigationItems" />
-  <div class="flex-1 flex flex-col">
-    <app-hero class="flex flex-1 flex-col" />
-    <app-advantages class="flex flex-1 flex-col" />
-    <app-why class="flex flex-1 flex-col" />
-    <app-instructors class="flex flex-1 flex-col" />
-    <app-contact-us class="flex flex-1 flex-col" />
-  </div>
-  <app-footer [navigationItems]="navigationItems" />
-</div>
+<app-shell [navigationItems]="navigationItems">
+  <router-outlet />
+</app-shell>

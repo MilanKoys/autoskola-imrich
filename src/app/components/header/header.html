@@ -17,11 +17,12 @@
         <!-- Navgation -->
         <div class="xl:flex hidden items-center gap-8">
           @for (item of navigationItems(); track item) {
-            <p
+            <a
+              [routerLink]="item.route"
               class="dark:text-white/80 text-black/80 cursor-pointer hover:text-primary duration-200 transition-colors"
             >
               {{ item.label }}
-            </p>
+            </a>
           }
         </div>
         <!-- Enroll -->
@@ -49,11 +50,13 @@
       <!-- Navigation -->
       <div class="flex flex-col gap-4">
         @for (item of navigationItems(); track item) {
-          <p
+          <a
+            (click)="drawerMenu = false"
+            [routerLink]="item.route"
             class="dark:text-white/80 text-black/80 cursor-pointer hover:text-primary duration-200 transition-colors"
           >
             {{ item.label }}
-          </p>
+          </a>
         }
       </div>
       <!-- Enroll -->

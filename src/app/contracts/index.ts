@@ -4,4 +4,6 @@ export * from './why-tag';
 
 export * from './advantage-tag';
 
+export * from './accomplishment';
+
 export * from './instuctor';

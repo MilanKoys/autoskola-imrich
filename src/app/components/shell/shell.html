@@ -1,0 +1,7 @@
+<div class="flex justify-between flex-col min-h-lvh">
+  <app-header [navigationItems]="navigationItems()" />
+  <div class="flex-1 flex flex-col">
+    <ng-content />
+  </div>
+  <app-footer [navigationItems]="navigationItems()" />
+</div>

@@ -1,0 +1,15 @@
+.hero-image {
+  background:
+    linear-gradient(0deg, var(--p-surface-900) 0%, var(--p-surface-900) 100%),
+    url('/frosty.jpg') lightgray 50% / cover no-repeat;
+  background-blend-mode: overlay, normal;
+}
+
+@media (prefers-color-scheme: light) {
+  .hero-image {
+    background:
+      linear-gradient(0deg, var(--p-surface-100) 0%, var(--p-surface-100) 100%),
+      url('/frosty.jpg') lightgray 50% / cover no-repeat;
+    background-blend-mode: overlay, normal;
+  }
+}
