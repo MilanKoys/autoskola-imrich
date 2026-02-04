@@ -1,0 +1,29 @@
+<div class="w-full aspect-16/4 flex justify-center items-center">
+  <div class="flex flex-col justify-center items-center max-w-4xl w-full m-10 gap-8">
+    <div class="flex gap-4">
+      @if (tag(); as tag) {
+        <p-tag severity="secondary">{{ tag }}</p-tag>
+      }
+    </div>
+    <p class="font-bold lg:text-6xl text-4xl text-black/90 text-center dark:text-white">
+      {{ header() }}
+    </p>
+    <p class="dark:text-white text-xl text-black/80 text-center">
+      {{ text() }}
+    </p>
+    @if (buttons()?.length) {
+      <div class="flex gap-4 flex-wrap justify-center">
+        @for (button of buttons(); track button) {
+          <p-button
+            [variant]="button.variant"
+            [severity]="button.severity ?? 'primary'"
+            [routerLink]="button.route"
+            (onClick)="button?.command()"
+            size="large"
+            >{{ button.label }}</p-button
+          >
+        }
+      </div>
+    }
+  </div>
+</div>

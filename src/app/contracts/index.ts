@@ -7,3 +7,7 @@ export * from './advantage-tag';
 export * from './accomplishment';
 
 export * from './instuctor';
+
+export * from './undefined';
+
+export * from './hero-action';

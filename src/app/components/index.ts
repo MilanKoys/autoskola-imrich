@@ -6,7 +6,7 @@ export * from './footer/footer';
 
 export * from './hero/hero';
 
-export * from './hero-about/hero-about';
+export * from './hero-simple/hero-simple';
 
 export * from './advantages/advantages';
 

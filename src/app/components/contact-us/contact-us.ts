@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input, InputSignal } from '@angular/core';
+import { Undefined } from '@contracts';
 import { CardModule } from 'primeng/card';
 
 @Component({
@@ -7,4 +8,6 @@ import { CardModule } from 'primeng/card';
   templateUrl: './contact-us.html',
   styleUrl: './contact-us.css',
 })
-export class ContactUs {}
+export class ContactUs {
+  public readonly onlyIcon: InputSignal<Undefined<boolean>> = input();
+}
