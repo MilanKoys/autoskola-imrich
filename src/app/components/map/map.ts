@@ -1,0 +1,34 @@
+import { AfterViewInit, Component } from '@angular/core';
+import * as Leaflet from 'leaflet';
+import { CardModule } from 'primeng/card';
+
+@Component({
+  selector: 'app-map',
+  imports: [CardModule],
+  templateUrl: './map.html',
+  styleUrl: './map.css',
+})
+export class Map implements AfterViewInit {
+  private map!: L.Map;
+  private readonly markers: L.Marker[] = [Leaflet.marker([48.7065613, 21.2428065])];
+
+  ngAfterViewInit(): void {
+    this.initMap();
+    this.centerMap();
+  }
+
+  private initMap() {
+    const baseMapURl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    this.map = Leaflet.map('map');
+    Leaflet.tileLayer(baseMapURl).addTo(this.map);
+    this.markers.map((marker) => marker.addTo(this.map).bindPopup('Autoskola Imrich'));
+  }
+
+  private centerMap() {
+    // Create a boundary based on the markers
+    const bounds = Leaflet.latLngBounds(this.markers.map((marker) => marker.getLatLng()));
+
+    // Fit the map into the boundary
+    this.map.fitBounds(bounds);
+  }
+}

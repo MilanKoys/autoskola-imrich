@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { ContactUs, HeroSimple } from '@components';
+import { AfterViewInit, Component } from '@angular/core';
+import { ContactQuestion, ContactUs, HeroSimple, Map } from '@components';
 
 @Component({
   selector: 'app-contact',
-  imports: [HeroSimple, ContactUs],
+  imports: [HeroSimple, ContactUs, Map, ContactQuestion],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })

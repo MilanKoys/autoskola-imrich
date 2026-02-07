@@ -1,5 +1,6 @@
 import { Component, inject, Signal, signal, WritableSignal } from '@angular/core';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
 
@@ -7,7 +8,7 @@ const tags: string[] = ['98% úspešnosť', 'Moderné vozidlá', 'Flexibilné ho
 
 @Component({
   selector: 'app-hero',
-  imports: [RatingModule, ReactiveFormsModule, ButtonModule],
+  imports: [RatingModule, ReactiveFormsModule, ButtonModule, RouterLink],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })

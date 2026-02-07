@@ -16,11 +16,13 @@ export class AboutUs {
   protected readonly heroButtons: HeroAction[] = [
     {
       label: 'Začať kurz',
+      route: '/pricing',
     },
     {
       label: 'Kontaktovať nás',
       variant: 'outlined',
       severity: 'secondary',
+      route: '/contact',
     },
   ];
 }
