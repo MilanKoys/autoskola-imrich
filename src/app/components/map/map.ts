@@ -21,14 +21,15 @@ export class Map implements AfterViewInit {
     const baseMapURl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     this.map = Leaflet.map('map');
     Leaflet.tileLayer(baseMapURl).addTo(this.map);
-    this.markers.map((marker) => marker.addTo(this.map).bindPopup('Autoskola Imrich'));
+    this.markers.map((marker) =>
+      marker
+        .addTo(this.map)
+        .bindPopup('Autoškola Imrich <br /><br />Werferova 1<br />040 11 Košice'),
+    );
   }
 
   private centerMap() {
-    // Create a boundary based on the markers
     const bounds = Leaflet.latLngBounds(this.markers.map((marker) => marker.getLatLng()));
-
-    // Fit the map into the boundary
     this.map.fitBounds(bounds);
   }
 }
