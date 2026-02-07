@@ -16,8 +16,9 @@ export class HeroSimple {
   public readonly tagSeverity: InputSignal<Undefined<Severity>> = input();
   public readonly tagPill: InputSignal<Undefined<boolean>> = input();
   public readonly plags: InputSignal<Undefined<Plag[]>> = input();
+  public readonly small: InputSignal<Undefined<boolean>> = input();
   public readonly header: InputSignal<string> = input.required();
-  public readonly text: InputSignal<string> = input.required();
+  public readonly text: InputSignal<Undefined<string>> = input();
   public readonly buttons: InputSignal<Undefined<HeroAction[]>> = input();
   public readonly background: InputSignal<Undefined<boolean>> = input();
 }

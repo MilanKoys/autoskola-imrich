@@ -1,4 +1,9 @@
-<div class="w-full aspect-16/4 flex justify-center items-center" [class.hero-image]="background()">
+<div
+  class="w-full flex justify-center items-center"
+  [class.hero-image]="background()"
+  [class.aspect-16/3]="small()"
+  [class.aspect-16/4]="!small()"
+>
   <div class="flex flex-col justify-center items-center max-w-4xl w-full m-10 gap-8">
     <div class="flex gap-4">
       @if (tag(); as tag) {
@@ -16,9 +21,14 @@
     >
       {{ header() }}
     </p>
-    <p [class.text-white]="background()" class="dark:text-white text-xl text-black/80 text-center">
-      {{ text() }}
-    </p>
+    @if (text(); as text) {
+      <p
+        [class.text-white]="background()"
+        class="dark:text-white text-xl text-black/80 text-center"
+      >
+        {{ text }}
+      </p>
+    }
     @if (buttons()?.length) {
       <div class="flex gap-4 flex-wrap justify-center">
         @for (button of buttons(); track button) {

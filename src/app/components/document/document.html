@@ -1,0 +1,22 @@
+<div
+  class="mx-10 dark:bg-surface-900 bg-black/3 rounded-xl flex lg:h-64 overflow-hidden border-1 border-surface-600/20 max-w-4xl"
+>
+  <div class="aspect-square h-full lg:flex hidden items-center bg-primary justify-center">
+    <i class="pi pi-file-pdf text-4xl! text-white"></i>
+  </div>
+  <div class="flex flex-col justify-center ps-10 gap-2 m-10">
+    <p class="text-primary-500">PDF Dokument</p>
+    <p class="text-xl font-semibold">Žiadosť o udelenie vodičského oprávnenia</p>
+    <p class="text-sm opacity-80">
+      Oficiálna žiadosť potrebná pre udelenie vodičského oprávnenia. Tlačivo je potrebné vyplniť,
+      podpísať a priniesť na prvú hodinu kurzu.
+    </p>
+    <div class="flex flex-wrap w-full mt-4 items-center gap-5">
+      <p-button (onClick)="downloadPDF()" iconPos="left">
+        <i class="pi pi-download"></i>
+        <p class="text-sm">Stiahnuť dokument</p>
+      </p-button>
+      <p class="opacity-80 text-xs">PDF · Veľkosť: ~744 KB</p>
+    </div>
+  </div>
+</div>

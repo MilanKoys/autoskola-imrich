@@ -29,3 +29,5 @@ export * from './pricing-category/pricing-category';
 export * from './map/map';
 
 export * from './contact-question/contact-question';
+
+export * from './document/document';
