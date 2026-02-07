@@ -25,7 +25,7 @@ export class App {
     },
     {
       label: 'Cenník',
-      route: 'price',
+      route: 'pricing',
     },
     {
       label: 'O Nás',

@@ -1,0 +1,6 @@
+.hero-image {
+  background:
+    linear-gradient(0deg, var(--p-surface-800) 0%, var(--p-surface-800) 100%),
+    url('/frosty.jpg') lightgray 50% / cover no-repeat;
+  background-blend-mode: overlay, normal;
+}

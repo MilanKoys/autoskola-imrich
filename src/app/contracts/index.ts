@@ -11,3 +11,9 @@ export * from './instuctor';
 export * from './undefined';
 
 export * from './hero-action';
+
+export * from './severity';
+
+export * from './plag';
+
+export * from './course';

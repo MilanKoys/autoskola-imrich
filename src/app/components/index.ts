@@ -21,3 +21,7 @@ export * from './shell/shell';
 export * from './story/story';
 
 export * from './ready/ready';
+
+export * from './pricing-card/pricing-card';
+
+export * from './pricing-category/pricing-category';
