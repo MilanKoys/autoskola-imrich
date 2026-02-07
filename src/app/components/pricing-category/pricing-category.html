@@ -1,19 +1,35 @@
-<div class="flex flex-col items-center gap-10 py-10">
-  <div class="flex flex-col gap-4 items-center">
-    <p-tag class="mb-4 py-2! px-4! rounded-full!" severity="success" [rounded]="true">
-      <div class="flex gap-2 items-center">
-        <i class="pi pi-verified"></i>
-        <p>
-          {{ tag() }}
-        </p>
-      </div>
-    </p-tag>
-    <p class="text-5xl font-bold">{{ header() }}</p>
-    <p class="opacity-80 text-lg">{{ summary() }}</p>
+<div class="flex flex-col items-center py-10 mx-4 gap-2">
+  <div class="flex flex-col items-center gap-10">
+    <div class="flex flex-col gap-4 items-center">
+      <p-tag class="mb-4 py-2! px-4! rounded-full!" severity="success" [rounded]="true">
+        <div class="flex gap-2 items-center">
+          <i class="pi pi-verified"></i>
+          <p>
+            {{ tag() }}
+          </p>
+        </div>
+      </p-tag>
+      <p class="lg:text-5xl text-3xl font-bold">{{ header() }}</p>
+      <p class="opacity-80 lg:text-lg">{{ summary() }}</p>
+    </div>
+    <div class="flex sm:flex-row flex-col w-full max-w-4xl p-4 justify-center gap-5 flex-wrap">
+      @for (course of courses(); track course) {
+        <app-pricing-card
+          [icon]="{ external: course.externalIcon, icon: course.icon }"
+          [description]="course.description"
+          [tags]="course.tags"
+          [types]="course.type"
+          [price]="course.price"
+        />
+      }
+    </div>
   </div>
-  <div class="flex w-full max-w-4xl p-4 justify-center gap-5 flex-wrap">
-    @for (course of courses(); track course) {
-      <app-pricing-card [tags]="course.tags" [types]="course.type" [price]="course.price" />
-    }
-  </div>
+  @if (coditionalRide(); as ride) {
+    <p-tag severity="info" [rounded]="true"
+      ><div class="flex gap-2 items-center">
+        <i class="pi pi-info-circle text-sm!"></i>
+        <p class="text-xs!">{{ ride }}</p>
+      </div></p-tag
+    >
+  }
 </div>

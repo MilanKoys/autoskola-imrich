@@ -11,5 +11,7 @@ import { CardModule } from 'primeng/card';
 export class PricingCard {
   public readonly types: InputSignal<string[]> = input.required();
   public readonly price: InputSignal<string> = input.required();
+  public readonly description: InputSignal<string> = input.required();
   public readonly tags: InputSignal<string[]> = input.required();
+  public readonly icon: InputSignal<{ external?: boolean; icon: string }> = input.required();
 }

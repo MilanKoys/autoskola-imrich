@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { HeroSimple, PricingCategory } from '@components';
+import { HeroSimple, PricingCategory, Ready } from '@components';
 import { Course, Plag } from '@contracts';
 
 @Component({
   selector: 'app-pricing',
-  imports: [HeroSimple, PricingCategory],
+  imports: [HeroSimple, PricingCategory, Ready],
   templateUrl: './pricing.html',
   styleUrl: './pricing.css',
 })
@@ -26,16 +26,113 @@ export class Pricing {
     },
   ];
 
-  protected readonly courses: Course[] = [
+  protected readonly courseCategories: {
+    course: Course[];
+    tag: string;
+    header: string;
+    summary: string;
+    conditionalRide: string;
+  }[] = [
     {
-      type: ['B', 'B1', 'AM'],
-      price: '999',
-      tags: ['Základný kurz', 'Podpora počas celého kurzu'],
+      tag: 'Basic',
+      header: 'Štvornesačné kurzy',
+      summary: 'Ideálne pre študentov s viac času na prípravu',
+      conditionalRide: 'Kondičná jazda, 45 minút - 30€',
+      course: [
+        {
+          type: ['B', 'B1', 'AM'],
+          price: '999',
+          description:
+            'Základný kurz pre osobné automobily do 3,5t. Najobľúbenejší kurz pre začiatočníkov.',
+          tags: ['Základný kurz', 'Podpora počas celého kurzu'],
+          icon: 'pi pi-car',
+        },
+        {
+          type: ['A', 'A2', 'A1', 'AM'],
+          price: '800',
+          description:
+            'Kurz pre motocykle všetkých kategórií. Od malých skútrov po výkonné motocykle.',
+          tags: ['Základný kurz', 'Podpora počas celého kurzu'],
+          icon: 'motorcycle',
+          externalIcon: true,
+        },
+      ],
     },
     {
-      type: ['A', 'A2', 'A1', 'AM'],
-      price: '800',
-      tags: ['Základný kurz', 'Podpora počas celého kurzu'],
+      tag: 'Deluxe',
+      header: 'Dvojmesačné kurzy',
+      summary: 'Rýchlejší postup pre zaneprázdnených',
+      conditionalRide: 'Kondičná jazda, 45 minút - 30€',
+      course: [
+        {
+          type: ['B', 'B1', 'AM'],
+          price: '1300',
+          description:
+            'Základný kurz pre osobné automobily do 3,5t. Najobľúbenejší kurz pre začiatočníkov.',
+          tags: [
+            'Zrýchlený "Basic" kurz',
+            'Garancia dĺžky kurzu 2 mesiace',
+            'Online materiály v cene',
+            'Flexibilný čas',
+            'Prioritná podpora',
+          ],
+          icon: 'pi pi-car',
+        },
+        {
+          type: ['A', 'A2', 'A1', 'AM'],
+          price: '850',
+          description:
+            'Kurz pre motocykle všetkých kategórií. Od malých skútrov po výkonné motocykle.',
+          tags: [
+            'Zrýchlený "Basic" kurz',
+            'Garancia dĺžky kurzu 2 mesiace',
+            'Online materiály v cene',
+            'Flexibilný čas',
+            'Prioritná podpora',
+          ],
+          icon: 'motorcycle',
+          externalIcon: true,
+        },
+      ],
+    },
+    {
+      tag: 'Grand Deluxe',
+      header: 'Mesačné kurzy',
+      summary: 'Najrýchlejšia cesta k vodičskému preukazu',
+      conditionalRide: 'Kondičná jazda, 45 minút - 30€',
+      course: [
+        {
+          type: ['B', 'B1', 'AM'],
+          price: '1500',
+          description:
+            'Základný kurz pre osobné automobily do 3,5t. Najobľúbenejší kurz pre začiatočníkov.',
+          tags: [
+            'Super "Deluxe" kurzy Grand',
+            'Individuálny prístup',
+            'Všetky materiály v cene',
+            'VIP podpora a flexibilita',
+            'Jazda na diaľnici',
+            'Výber termínu a času jazdy',
+          ],
+          icon: 'pi pi-car',
+        },
+        {
+          type: ['A', 'A2', 'A1', 'AM'],
+          price: '850',
+          description:
+            'Kurz pre motocykle všetkých kategórií. Od malých skútrov po výkonné motocykle.',
+          tags: [
+            'Super "Deluxe" kurzy Grand',
+            'Individuálny prístup',
+            'Všetky materiály v cene',
+            'VIP podpora a flexibilita',
+            'Jazda na diaľnici',
+            'Výber termínu a času jazdy',
+          ],
+          icon: 'motorcycle',
+          externalIcon: true,
+        },
+      ],
     },
   ];
 }

@@ -9,10 +9,16 @@
   tagSeverity="success"
   class="flex flex-1 flex-col"
 />
-<app-pricing-category
-  tag="Basic"
-  header="Štvornesačné kurzy"
-  summary="Ideálne pre študentov s viac času na prípravu"
-  [courses]="courses"
-  class="flex flex-1 flex-col"
-/>
+<div class="mb-8">
+  @for (category of courseCategories; track category) {
+    <app-pricing-category
+      [tag]="category.tag"
+      [header]="category.header"
+      [summary]="category.summary"
+      [courses]="category.course"
+      [coditionalRide]="category.conditionalRide"
+      class="flex flex-1 flex-col"
+    />
+  }
+</div>
+<app-ready class="flex flex-1 flex-col" />

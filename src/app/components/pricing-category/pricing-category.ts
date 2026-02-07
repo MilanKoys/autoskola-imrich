@@ -1,6 +1,6 @@
 import { Component, input, InputSignal } from '@angular/core';
 import { PricingCard } from '@components';
-import { Course } from '@contracts';
+import { Course, Undefined } from '@contracts';
 import { TagModule } from 'primeng/tag';
 
 @Component({
@@ -14,4 +14,5 @@ export class PricingCategory {
   public readonly header: InputSignal<string> = input.required();
   public readonly tag: InputSignal<string> = input.required();
   public readonly summary: InputSignal<string> = input.required();
+  public readonly coditionalRide: InputSignal<Undefined<string>> = input();
 }

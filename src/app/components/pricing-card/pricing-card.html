@@ -1,28 +1,48 @@
 <p-card
   class="bg-black/3! dark:bg-surface-900! shadow-lg! hover:shadow-xl! transition-all duration-300 border-1 border-surface-600/20"
 >
-  <div class="flex flex-col w-xs items-center justify-between mt-2 gap-4 min-h-90 mx-2">
-    <div class="flex flex-col items-center gap-4 w-full">
-      <p class="text-xl font-semibold">
-        @for (type of types(); track type) {
-          {{ type }},
-        }
-      </p>
-      <p class="text-sm">Vodičský preukaz pre danú kategóriu</p>
-      <div class="flex items-center gap-3 mt-2">
-        <p class="text-4xl font-semibold">€{{ price() }}</p>
-        <p class="opacity-80">/celkovo</p>
+  <div
+    class="flex flex-col sm:max-w-xs sm:w-xs items-center justify-between mt-2 gap-4 min-h-90 mx-2"
+  >
+    <div class="flex flex-col w-full gap-4">
+      <div class="flex w-full gap-3">
+        <div
+          class="flex items-center justify-center bg-primary-500/50 size-14 aspect-square rounded-lg"
+        >
+          @if (icon(); as icon) {
+            @if (icon.external) {
+              <span class="material-symbols-outlined"> {{ icon.icon }}</span>
+            } @else {
+              <i class="{{ icon.icon }} text-xl!"></i>
+            }
+          }
+        </div>
+        <div class="flex flex-col">
+          <p class="text-xl font-semibold">
+            Skupina -
+            @for (type of types(); track $index) {
+              {{ type }}
+              @if ($index !== types().length - 1) {
+                ,
+              }
+            }
+          </p>
+          <p class="font-semibold text-2xl text-primary-500">€{{ price() }}</p>
+        </div>
       </div>
-      <div class="flex flex-col gap-4 mt-8 w-full">
-        @for (tag of tags(); track tag) {
-          <div class="flex gap-2 items-center">
-            <i class="pi pi-verified text-green-400"></i>
-            <p class="opacity-80 text-sm">{{ tag }}</p>
-          </div>
-        }
+      <p class="opacity-80 text-sm">{{ description() }}</p>
+      <div class="flex flex-col gap-4 w-full mt-4">
+        <div class="flex flex-col gap-4 w-full">
+          @for (tag of tags(); track tag) {
+            <div class="flex gap-2 items-center">
+              <i class="pi pi-verified text-green-400"></i>
+              <p class="opacity-80 text-sm">{{ tag }}</p>
+            </div>
+          }
+        </div>
       </div>
     </div>
-    <div class="flex flex-col w-full">
+    <div class="flex flex-col w-full mt-8">
       <p-button fluid>
         <p class="text-sm">Prihlásiť sa →</p>
       </p-button>
