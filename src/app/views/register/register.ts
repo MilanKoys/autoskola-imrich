@@ -14,6 +14,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Nullable } from '@contracts';
+import { HttpClient } from '@angular/common/http';
 
 interface RegisterForm {
   firstName: FormControl<Nullable<string>>;
@@ -29,6 +30,22 @@ interface RegisterForm {
   remarks: FormControl<Nullable<string>>;
   agreement: FormControl<Nullable<boolean>>;
   tos: FormControl<Nullable<boolean>>;
+}
+
+interface RegisterFormValues {
+  firstName: Nullable<string>;
+  lastName: Nullable<string>;
+  email: Nullable<string>;
+  phone: Nullable<string>;
+  address: Nullable<string>;
+  birthday: Nullable<Date>;
+  courseType: Nullable<string>;
+  courseCategory: Nullable<string>;
+  courseStart: Nullable<Date>;
+  preferedTime: Nullable<string>;
+  remarks: Nullable<string>;
+  agreement: Nullable<boolean>;
+  tos: Nullable<boolean>;
 }
 
 @Component({
@@ -47,6 +64,7 @@ interface RegisterForm {
   styleUrl: './register.css',
 })
 export class Register {
+  private readonly _httpClient: HttpClient = inject(HttpClient);
   private readonly _formBuilder: FormBuilder = inject(FormBuilder);
   private readonly _form: FormGroup<RegisterForm> = this._formBuilder.group({
     firstName: this._formBuilder.control<Nullable<string>>(null, [Validators.required]),
@@ -108,6 +126,16 @@ export class Register {
       value: '4',
     },
   ];
+
+  protected register() {
+    if (this._form.invalid) return;
+    const values: RegisterFormValues = this._form.getRawValue();
+
+    this._httpClient.post('http://127.0.0.1:8000/register', values).subscribe({
+      complete: () => console.log('Register complete!'),
+      error: () => console.log('Register error!'),
+    });
+  }
 
   protected get form() {
     return this._form;
