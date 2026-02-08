@@ -221,7 +221,7 @@
       </div>
     </div>
     <div class="flex flex-col items-center gap-4 mt-8">
-      <p-button [disabled]="form.invalid" iconPos="left">
+      <p-button (onClick)="register()" [disabled]="form.invalid" iconPos="left">
         <i class="pi pi-send font-semibold!"></i>
         <p class="font-semibold">Odoslať prihlášku</p>
       </p-button>
