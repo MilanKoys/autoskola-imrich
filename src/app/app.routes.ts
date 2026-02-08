@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AboutUs, Contact, Documents, Home, Pricing } from '@views';
+import { AboutUs, Contact, Documents, Home, Pricing, Register } from '@views';
 
 export const routes: Routes = [
   {
@@ -21,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'documents',
     component: Documents,
+  },
+  {
+    path: 'register',
+    component: Register,
   },
 ];

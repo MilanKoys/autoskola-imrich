@@ -1,10 +1,11 @@
 import { Component, input, InputSignal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-pricing-card',
-  imports: [CardModule, ButtonModule],
+  imports: [CardModule, ButtonModule, RouterLink],
   templateUrl: './pricing-card.html',
   styleUrl: './pricing-card.css',
 })

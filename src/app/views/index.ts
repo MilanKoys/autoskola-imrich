@@ -7,3 +7,5 @@ export * from './contact/contact';
 export * from './pricing/pricing';
 
 export * from './documents/documents';
+
+export * from './register/register';

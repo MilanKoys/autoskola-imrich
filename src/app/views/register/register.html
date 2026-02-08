@@ -1,0 +1,215 @@
+<div class="flex flex-col w-full flex-1">
+  <div class="flex flex-col w-full items-center mt-20 gap-4">
+    <p-tag severity="success" class="px-3! py-2! rounded-full!">
+      <div class="flex items-center gap-2">
+        <i class="pi pi-car text-sm!"></i>
+        <p class="text-xs!">Registrácia</p>
+      </div>
+    </p-tag>
+    <p class="text-4xl font-bold">Zapísať sa na kurz</p>
+    <p class="opacity-80 max-w-2xl text-lg text-center">
+      Vyplňte formulár a začnite svoju cestu k vodičskému preukazu. Kontaktujeme vás do 48 hodín.
+    </p>
+  </div>
+  <div class="flex flex-col gap-8 mt-16 mb-10">
+    <div class="flex justify-center">
+      <div
+        class="gap-6 max-w-4xl mx-8 w-full dark:bg-surface-900 bg-black/3 borde-1 border border-surface-600/20 p-6 w-fit rounded-xl flex flex-col"
+      >
+        <div class="flex-col flex gap-2">
+          <div class="flex gap-3 items-center">
+            <i class="pi pi-user text-primary-500"></i>
+            <p class="font-semibold">Osobné údaje</p>
+          </div>
+          <p class="opacity-80 text-sm">Základné informácie potrebné pre registráciu</p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex gap-4 w-full md:flex-row flex-col">
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Meno *</label>
+              <input
+                placeholder="Vaše meno"
+                size="small"
+                fluid
+                pInputText
+                pSize="small"
+                id="username"
+                autocomplete="off"
+              />
+            </div>
+            <div class="flex w-full flex-col gap-1">
+              <label class="opacity-80 text-sm" for="username">Priezvisko *</label>
+              <input
+                pSize="small"
+                placeholder="Vaše priezvisko"
+                fluid
+                pInputText
+                id="username"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="flex gap-4 w-full md:flex-row flex-col">
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Email *</label>
+              <input
+                placeholder="example@email.com"
+                size="small"
+                fluid
+                pInputText
+                pSize="small"
+                id="username"
+                autocomplete="off"
+              />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Telefón *</label>
+              <input
+                pSize="small"
+                placeholder="+421 123 456 789"
+                fluid
+                pInputText
+                id="username"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="flex gap-4 w-full md:flex-row flex-col">
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Adressa *</label>
+              <input
+                placeholder="Ulica, číslo, mesto, PSČ"
+                size="small"
+                fluid
+                pInputText
+                pSize="small"
+                id="username"
+                autocomplete="off"
+              />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Dátum narodenia *</label>
+              <p-datepicker dateFormat="dd.m.yy" size="small" placeholder="dd.mm.yyyy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <div
+        class="gap-6 max-w-4xl mx-8 w-full dark:bg-surface-900 bg-black/3 borde-1 border border-surface-600/20 p-6 w-fit rounded-xl flex flex-col"
+      >
+        <div class="flex-col flex gap-2">
+          <div class="flex gap-3 items-center">
+            <i class="pi pi-car text-primary-500"></i>
+            <p class="font-semibold">Výber kurzu</p>
+          </div>
+          <p class="opacity-80 text-sm">Vyberte si typ kurzu a kategóriu vodičského preukazu</p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex gap-4 w-full md:flex-row flex-col">
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Typ kurzu *</label>
+              <p-select
+                fluid
+                size="small"
+                [options]="courseTypes"
+                optionLabel="label"
+                optionValue="value"
+                placeholder="Výber typu kurzu"
+              />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Kategória kurzu *</label>
+              <p-select
+                fluid
+                size="small"
+                [options]="courseTypes"
+                optionLabel="label"
+                optionValue="value"
+                placeholder="Výber kategórie kurzu"
+              />
+            </div>
+          </div>
+
+          <div class="flex gap-4 w-full md:flex-row flex-col">
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Preferovaný začiatok kurzu</label>
+              <p-datepicker dateFormat="dd.m.yy" size="small" placeholder="dd.mm.yyyy" />
+            </div>
+            <div class="flex flex-col w-full gap-1">
+              <label class="opacity-80 text-sm" for="username">Preferovaný čas</label>
+              <p-select
+                fluid
+                size="small"
+                [options]="preferedTime"
+                optionLabel="label"
+                optionValue="value"
+                placeholder="Výber kategórie kurzu"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center">
+      <div
+        class="gap-6 max-w-4xl mx-8 w-full dark:bg-surface-900 bg-black/3 borde-1 border border-surface-600/20 p-6 w-fit rounded-xl flex flex-col"
+      >
+        <div class="flex-col flex gap-2">
+          <div class="flex gap-3 items-center">
+            <i class="pi pi-envelope text-primary-500"></i>
+            <p class="font-semibold">Dodatočné informácie</p>
+          </div>
+          <p class="opacity-80 text-sm">Poznámky a súhlas s podmienkami</p>
+        </div>
+
+        <div class="flex flex-col w-full gap-1">
+          <label class="opacity-80 text-sm" for="username">Poznámky alebo otázky</label>
+          <textarea
+            placeholder="Máte nejaké špecifické požiadavky alebo otázky?"
+            fluid
+            pSize="small"
+            cols="30"
+            pTextarea
+          ></textarea>
+        </div>
+
+        <div class="flex flex-col w-full gap-2">
+          <div class="flex items-center gap-2">
+            <p-checkbox name="agreement" [binary]="true" />
+            <label class="text-sm"
+              >Potvrdzujem, že mám platný lekársky posudok potrebný pre získanie vodičského
+              preukazu</label
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <p-checkbox name="TOS" [binary]="true" />
+            <label
+              data-slot="label"
+              class="flex items-center gap-2 peer-disabled:cursor-not-allowed text-sm leading-relaxed"
+              for="terms"
+              >Súhlasím s
+              <a href="#" class="text-primary-500 hover:underline">obchodnými podmienkami</a> a<a
+                href="#"
+                class="text-primary-500 hover:underline ml-1"
+                >spracovaním osobných údajov</a
+              >
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center gap-4 mt-8">
+      <p-button iconPos="left">
+        <i class="pi pi-car font-semibold!"></i>
+        <p class="font-semibold">Odoslať prihlášku</p>
+      </p-button>
+      <p class="text-sm opacity-80">Po odoslaní formulára vás budeme kontaktovať do 48 hodín</p>
+    </div>
+  </div>
+</div>
