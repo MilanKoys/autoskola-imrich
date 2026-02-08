@@ -131,7 +131,7 @@ export class Register {
     if (this._form.invalid) return;
     const values: RegisterFormValues = this._form.getRawValue();
 
-    this._httpClient.post('http://autoskolaimrich.sk:8000/register', values).subscribe({
+    this._httpClient.post('http://autoskolaimrich.sk:8000/api/register', values).subscribe({
       complete: () => console.log('Register complete!'),
       error: () => console.log('Register error!'),
     });
