@@ -17,3 +17,5 @@ export * from './severity';
 export * from './plag';
 
 export * from './course';
+
+export * from './nullable';

@@ -11,7 +11,7 @@
       Vyplňte formulár a začnite svoju cestu k vodičskému preukazu. Kontaktujeme vás do 48 hodín.
     </p>
   </div>
-  <div class="flex flex-col gap-8 mt-16 mb-10">
+  <form [formGroup]="form" class="flex flex-col gap-8 mt-16 mb-10">
     <div class="flex justify-center">
       <div
         class="gap-6 max-w-4xl mx-8 w-full dark:bg-surface-900 bg-black/3 borde-1 border border-surface-600/20 p-6 w-fit rounded-xl flex flex-col"
@@ -28,6 +28,7 @@
             <div class="flex flex-col w-full gap-1">
               <label class="opacity-80 text-sm" for="username">Meno *</label>
               <input
+                formControlName="firstName"
                 placeholder="Vaše meno"
                 size="small"
                 fluid
@@ -40,6 +41,7 @@
             <div class="flex w-full flex-col gap-1">
               <label class="opacity-80 text-sm" for="username">Priezvisko *</label>
               <input
+                formControlName="lastName"
                 pSize="small"
                 placeholder="Vaše priezvisko"
                 fluid
@@ -54,6 +56,7 @@
             <div class="flex flex-col w-full gap-1">
               <label class="opacity-80 text-sm" for="username">Email *</label>
               <input
+                formControlName="email"
                 placeholder="example@email.com"
                 size="small"
                 fluid
@@ -66,6 +69,7 @@
             <div class="flex flex-col w-full gap-1">
               <label class="opacity-80 text-sm" for="username">Telefón *</label>
               <input
+                formControlName="phone"
                 pSize="small"
                 placeholder="+421 123 456 789"
                 fluid
@@ -80,6 +84,7 @@
             <div class="flex flex-col w-full gap-1">
               <label class="opacity-80 text-sm" for="username">Adressa *</label>
               <input
+                formControlName="address"
                 placeholder="Ulica, číslo, mesto, PSČ"
                 size="small"
                 fluid
@@ -91,7 +96,12 @@
             </div>
             <div class="flex flex-col w-full gap-1">
               <label class="opacity-80 text-sm" for="username">Dátum narodenia *</label>
-              <p-datepicker dateFormat="dd.m.yy" size="small" placeholder="dd.mm.yyyy" />
+              <p-datepicker
+                formControlName="birthday"
+                dateFormat="dd.m.yy"
+                size="small"
+                placeholder="dd.mm.yyyy"
+              />
             </div>
           </div>
         </div>
@@ -114,6 +124,7 @@
             <div class="flex flex-col w-full gap-1">
               <label class="opacity-80 text-sm" for="username">Typ kurzu *</label>
               <p-select
+                formControlName="courseType"
                 fluid
                 size="small"
                 [options]="courseTypes"
@@ -126,6 +137,7 @@
               <label class="opacity-80 text-sm" for="username">Kategória kurzu *</label>
               <p-select
                 fluid
+                formControlName="courseCategory"
                 size="small"
                 [options]="courseTypes"
                 optionLabel="label"
@@ -138,12 +150,18 @@
           <div class="flex gap-4 w-full md:flex-row flex-col">
             <div class="flex flex-col w-full gap-1">
               <label class="opacity-80 text-sm" for="username">Preferovaný začiatok kurzu</label>
-              <p-datepicker dateFormat="dd.m.yy" size="small" placeholder="dd.mm.yyyy" />
+              <p-datepicker
+                formControlName="courseStart"
+                dateFormat="dd.m.yy"
+                size="small"
+                placeholder="dd.mm.yyyy"
+              />
             </div>
             <div class="flex flex-col w-full gap-1">
               <label class="opacity-80 text-sm" for="username">Preferovaný čas</label>
               <p-select
                 fluid
+                formControlName="preferedTime"
                 size="small"
                 [options]="preferedTime"
                 optionLabel="label"
@@ -171,6 +189,7 @@
         <div class="flex flex-col w-full gap-1">
           <label class="opacity-80 text-sm" for="username">Poznámky alebo otázky</label>
           <textarea
+            formControlName="remarks"
             placeholder="Máte nejaké špecifické požiadavky alebo otázky?"
             fluid
             pSize="small"
@@ -181,14 +200,14 @@
 
         <div class="flex flex-col w-full gap-2">
           <div class="flex items-center gap-2">
-            <p-checkbox name="agreement" [binary]="true" />
+            <p-checkbox formControlName="agreement" name="agreement" [binary]="true" />
             <label class="text-sm"
               >Potvrdzujem, že mám platný lekársky posudok potrebný pre získanie vodičského
               preukazu</label
             >
           </div>
           <div class="flex items-center gap-2">
-            <p-checkbox name="TOS" [binary]="true" />
+            <p-checkbox formControlName="tos" name="TOS" [binary]="true" />
             <label
               data-slot="label"
               class="flex items-center gap-2 peer-disabled:cursor-not-allowed text-sm leading-relaxed"
@@ -205,11 +224,11 @@
       </div>
     </div>
     <div class="flex flex-col items-center gap-4 mt-8">
-      <p-button iconPos="left">
-        <i class="pi pi-car font-semibold!"></i>
+      <p-button [disabled]="form.invalid" iconPos="left">
+        <i class="pi pi-send font-semibold!"></i>
         <p class="font-semibold">Odoslať prihlášku</p>
       </p-button>
       <p class="text-sm opacity-80">Po odoslaní formulára vás budeme kontaktovať do 48 hodín</p>
     </div>
-  </div>
+  </form>
 </div>

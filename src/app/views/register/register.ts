@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TagModule } from 'primeng/tag';
 import { InputTextModule } from 'primeng/inputtext';
 import { DatePickerModule } from 'primeng/datepicker';
@@ -6,6 +6,30 @@ import { SelectModule } from 'primeng/select';
 import { TextareaModule } from 'primeng/textarea';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { Nullable } from '@contracts';
+
+interface RegisterForm {
+  firstName: FormControl<Nullable<string>>;
+  lastName: FormControl<Nullable<string>>;
+  email: FormControl<Nullable<string>>;
+  phone: FormControl<Nullable<string>>;
+  address: FormControl<Nullable<string>>;
+  birthday: FormControl<Nullable<Date>>;
+  courseType: FormControl<Nullable<string>>;
+  courseCategory: FormControl<Nullable<string>>;
+  courseStart: FormControl<Nullable<Date>>;
+  preferedTime: FormControl<Nullable<string>>;
+  remarks: FormControl<Nullable<string>>;
+  agreement: FormControl<Nullable<boolean>>;
+  tos: FormControl<Nullable<boolean>>;
+}
 
 @Component({
   selector: 'app-register',
@@ -17,11 +41,29 @@ import { ButtonModule } from 'primeng/button';
     TextareaModule,
     CheckboxModule,
     ButtonModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
 export class Register {
+  private readonly _formBuilder: FormBuilder = inject(FormBuilder);
+  private readonly _form: FormGroup<RegisterForm> = this._formBuilder.group({
+    firstName: this._formBuilder.control<Nullable<string>>(null, [Validators.required]),
+    lastName: this._formBuilder.control<Nullable<string>>(null, [Validators.required]),
+    email: this._formBuilder.control<Nullable<string>>(null, [Validators.required]),
+    phone: this._formBuilder.control<Nullable<string>>(null, [Validators.required]),
+    address: this._formBuilder.control<Nullable<string>>(null, [Validators.required]),
+    birthday: this._formBuilder.control<Nullable<Date>>(null, [Validators.required]),
+    courseType: this._formBuilder.control<Nullable<string>>(null, [Validators.required]),
+    courseCategory: this._formBuilder.control<Nullable<string>>(null, [Validators.required]),
+    courseStart: this._formBuilder.control<Nullable<Date>>(null),
+    preferedTime: this._formBuilder.control<Nullable<string>>(null),
+    remarks: this._formBuilder.control<Nullable<string>>(null),
+    agreement: this._formBuilder.control<Nullable<boolean>>(null, [Validators.required]),
+    tos: this._formBuilder.control<Nullable<boolean>>(null, [Validators.required]),
+  });
+
   protected readonly courseTypes: { label: string; value: string }[] = [
     {
       label: 'Štvornesačné kurzy - Basic',
@@ -66,4 +108,8 @@ export class Register {
       value: '4',
     },
   ];
+
+  protected get form() {
+    return this._form;
+  }
 }
