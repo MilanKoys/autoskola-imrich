@@ -16,6 +16,7 @@ import {
 import { Nullable } from '@contracts';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 interface RegisterForm {
   firstName: FormControl<Nullable<string>>;
@@ -65,6 +66,7 @@ interface RegisterFormValues {
   styleUrl: './register.css',
 })
 export class Register {
+  private readonly _messageService = inject(MessageService);
   private readonly _router: Router = inject(Router);
   private readonly _httpClient: HttpClient = inject(HttpClient);
   private readonly _formBuilder: FormBuilder = inject(FormBuilder);
@@ -135,7 +137,12 @@ export class Register {
 
     this._httpClient.post('https://autoskolaimrich.sk/api/register', values).subscribe({
       next: () => this._router.navigateByUrl('/register-success'),
-      error: () => console.log('Register error!'),
+      error: () =>
+        this._messageService.add({
+          summary: 'Error',
+          detail: 'Niečo sa zlé sa stalo, pokúste sa znova o pár minút.',
+          severity: 'danger',
+        }),
     });
   }
 
