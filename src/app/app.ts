@@ -15,10 +15,10 @@ export class App {
       label: 'Domov',
       route: '',
     },
-    {
+    /*     {
       label: 'Galéria',
       route: 'gallery',
-    },
+    }, */
     {
       label: 'Dokumenty',
       route: 'documents',

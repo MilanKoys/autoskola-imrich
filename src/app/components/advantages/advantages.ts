@@ -16,17 +16,17 @@ const tags: AdvantageTag[] = [
   },
   {
     summary: 'Skúsení inštruktori',
-    detail: 'Naši inštruktori majú viac ako 10 rokov praxe a stovky spokojných absolventov.',
+    detail: 'Naši inštruktori majú viac ako 10+ rokov praxe a stovky spokojných absolventov.',
     icon: 'pi-users',
   },
   {
-    summary: 'Najvyššia úspešnosť',
-    detail: '98% našich študentov úspešne zloží skúšku na prvý pokus. To je záruka kvality.',
+    summary: 'Vysoká úspešnosť',
+    detail: 'Vysoké percento našich študentov prospeje na prvý pokus. To je záruka kvality.',
     icon: 'pi-trophy',
   },
   {
     summary: 'Moderné vozidlá',
-    detail: 'Učíte sa na najnovších modeloch s automatickou prevodovkou aj manuálnou.',
+    detail: 'Učíte sa na najnovších modeloch áut s manuálnou prevodovkou.',
     icon: 'pi-car',
   },
   {

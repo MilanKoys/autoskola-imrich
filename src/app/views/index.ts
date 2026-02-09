@@ -9,3 +9,5 @@ export * from './pricing/pricing';
 export * from './documents/documents';
 
 export * from './register/register';
+
+export * from './register-success/register-success';

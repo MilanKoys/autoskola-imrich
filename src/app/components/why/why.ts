@@ -9,12 +9,6 @@ const tags: WhyTag[] = [
     icon: 'pi-users',
   },
   {
-    header: '98%',
-    summary: 'Úspešnosť na prvýkrát',
-    detail: 'Najvyššia na Slovensku',
-    icon: 'pi-graduation-cap',
-  },
-  {
     header: '25+',
     summary: 'Rokov skúseností',
     detail: 'V oblasti vzdelávania',

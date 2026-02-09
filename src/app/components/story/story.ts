@@ -1,7 +1,7 @@
 import { Component, Signal, signal, WritableSignal } from '@angular/core';
 import { TagModule } from 'primeng/tag';
 
-const tags: string[] = ['98% úspešnosť', 'Moderné vozidlá', 'Flexibilné hodiny'];
+const tags: string[] = ['Moderné vozidlá', 'Flexibilné hodiny'];
 
 @Component({
   selector: 'app-story',

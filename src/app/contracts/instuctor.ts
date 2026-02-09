@@ -5,5 +5,4 @@ export interface Instructor {
   experience: string;
   students: string;
   specialization: string[];
-  awards: string[];
 }

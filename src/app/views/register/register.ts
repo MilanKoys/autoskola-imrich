@@ -15,6 +15,7 @@ import {
 } from '@angular/forms';
 import { Nullable } from '@contracts';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface RegisterForm {
   firstName: FormControl<Nullable<string>>;
@@ -64,6 +65,7 @@ interface RegisterFormValues {
   styleUrl: './register.css',
 })
 export class Register {
+  private readonly _router: Router = inject(Router);
   private readonly _httpClient: HttpClient = inject(HttpClient);
   private readonly _formBuilder: FormBuilder = inject(FormBuilder);
   private readonly _form: FormGroup<RegisterForm> = this._formBuilder.group({
@@ -132,7 +134,7 @@ export class Register {
     const values: RegisterFormValues = this._form.getRawValue();
 
     this._httpClient.post('https://autoskolaimrich.sk/api/register', values).subscribe({
-      complete: () => console.log('Register complete!'),
+      complete: () => this._router.navigateByUrl('/register-success'),
       error: () => console.log('Register error!'),
     });
   }

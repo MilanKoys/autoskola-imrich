@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { AboutUs, Contact, Documents, Home, Pricing, Register } from '@views';
+import { AboutUs, Contact, Documents, Home, Pricing, Register, RegisterSuccess } from '@views';
 
 export const routes: Routes = [
   {
@@ -25,5 +25,9 @@ export const routes: Routes = [
   {
     path: 'register',
     component: Register,
+  },
+  {
+    path: 'register-success',
+    component: RegisterSuccess,
   },
 ];

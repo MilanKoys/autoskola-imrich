@@ -55,7 +55,7 @@
       <p class="font-bold text-lg text-white">Rýchle odkazy</p>
       <div class="flex flex-col gap-2">
         @for (item of navigationItems(); track item) {
-          <p-button [style]="{ padding: '0px' }" link
+          <p-button [routerLink]="item.route" [style]="{ padding: '0px' }" link
             ><p class="text-sm">{{ item.label }}</p></p-button
           >
         }

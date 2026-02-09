@@ -6,19 +6,17 @@ import { TagModule } from 'primeng/tag';
 const instructors: Instructor[] = [
   {
     name: 'Bc. Radoslav Urbančík',
-    position: 'Zakladateľ autoškoly',
+    position: 'Inštuktor autoškoly',
     experience: '20+',
     students: '2000+',
-    specialization: ['Skupina A, B, C, T, E, D'],
-    awards: ['Certifikát DEKRA', '98% úspešnosť', 'súdny znalec v doprave'],
+    specialization: ['Skupina A, A2, A1, B, B1, AM'],
   },
   {
     name: 'Ing. Ladislav IMRICH',
-    position: 'CEO spoločnosti',
+    position: 'Súdny znalec v doprave',
     experience: '30',
     students: '2000+',
-    specialization: ['Skupina A, B, C, T, E, D'],
-    awards: ['Certifikát DEKRA', 'súdny znalec v doprave'],
+    specialization: ['Skupina A, A2, A1, B, B1, AM'],
   },
 ];
 

@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { RatingModule } from 'primeng/rating';
 
-const tags: string[] = ['98% úspešnosť', 'Moderné vozidlá', 'Flexibilné hodiny'];
+const tags: string[] = ['Moderné vozidlá', 'Flexibilné hodiny'];
 
 @Component({
   selector: 'app-hero',
