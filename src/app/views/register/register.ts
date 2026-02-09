@@ -134,7 +134,7 @@ export class Register {
     const values: RegisterFormValues = this._form.getRawValue();
 
     this._httpClient.post('https://autoskolaimrich.sk/api/register', values).subscribe({
-      complete: () => this._router.navigateByUrl('/register-success'),
+      next: () => this._router.navigateByUrl('/register-success'),
       error: () => console.log('Register error!'),
     });
   }
