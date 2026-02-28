@@ -134,5 +134,21 @@ export class Pricing {
         },
       ],
     },
+    {
+      tag: 'Basic',
+      header: 'English courses',
+      summary: 'Idea for non native slovak speakers',
+      conditionalRide: 'Condition ride, 45 minutes - 30€',
+      course: [
+        {
+          type: ['B', 'B1', 'AM'],
+          price: '1300',
+          description:
+            'Basic course for passenger cars up to 3.5 tons. The most popular course for beginners.',
+          tags: ['Basic course', 'Support throughout the course'],
+          icon: 'pi pi-car',
+        },
+      ],
+    },
   ];
 }

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Signal, signal, WritableSignal } from '@angular/core';
 import { Instructor } from '@contracts';
 import { CardModule } from 'primeng/card';
@@ -17,12 +18,13 @@ const instructors: Instructor[] = [
     experience: '30',
     students: '2000+',
     specialization: ['Skupina A, A2, A1, B, B1, AM'],
+    image: 'rado_urbancik.jpg',
   },
 ];
 
 @Component({
   selector: 'app-instructors',
-  imports: [CardModule, TagModule],
+  imports: [CommonModule, CardModule, TagModule],
   templateUrl: './instructors.html',
   styleUrl: './instructors.css',
 })
