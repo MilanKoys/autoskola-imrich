@@ -11,6 +11,7 @@ const instructors: Instructor[] = [
     experience: '20+',
     students: '2000+',
     specialization: ['Skupina A, A2, A1, B, B1, AM'],
+    image: 'rado_urbancik.jpg',
   },
   {
     name: 'Ing. Ladislav IMRICH',
@@ -18,7 +19,6 @@ const instructors: Instructor[] = [
     experience: '30',
     students: '2000+',
     specialization: ['Skupina A, A2, A1, B, B1, AM'],
-    image: 'rado_urbancik.jpg',
   },
 ];
 
