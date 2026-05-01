@@ -17,6 +17,7 @@ import { Nullable } from '@contracts';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { Error } from 'app/contracts/error';
 
 interface RegisterForm {
   firstName: FormControl<Nullable<string>>;
@@ -137,12 +138,15 @@ export class Register {
 
     this._httpClient.post('https://autoskolaimrich.sk/api/register', values).subscribe({
       next: () => this._router.navigateByUrl('/register-success'),
-      error: () =>
+      error: (response: Error) => {
         this._messageService.add({
           summary: 'Error',
-          detail: 'Niečo sa zlé sa stalo, pokúste sa znova o pár minút.',
-          severity: 'danger',
-        }),
+          detail: response.error?.message
+            ? response.error.message
+            : 'Niečo sa zlé sa stalo, pokúste sa znova o pár minút.',
+          severity: 'warn',
+        });
+      },
     });
   }
 
